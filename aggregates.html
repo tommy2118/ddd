@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aggregates - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Aggregates</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Aggregates group Entities and Value Objects into cohesive units of consistency. They enforce domain rules, manage state changes, and act as transactional boundaries.
+      </p>
+    </div>
+  </section>
+
+  <!-- What are Aggregates? -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What are Aggregates?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        An Aggregate is a cluster of domain objects that are treated as a single unit. It is defined by:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Aggregate Root:</strong> The main Entity that controls access to other members of the Aggregate.</li>
+        <li><strong>Boundary of Consistency:</strong> All changes within an Aggregate must maintain domain rules.</li>
+        <li><strong>Transaction Scope:</strong> Operations within an Aggregate are performed atomically.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        Aggregates simplify complex domain logic by encapsulating related objects and ensuring consistency.
+      </p>
+    </div>
+  </section>
+
+  <!-- Characteristics of Good Aggregate Design -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Characteristics of Good Aggregate Design</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Designing Aggregates effectively requires understanding the domain rules and usage patterns. Here are some key principles:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Principle 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Define a Clear Root</h4>
+          <p class="text-gray-300 leading-relaxed">
+            The Aggregate Root is the primary Entity responsible for managing the state and behavior of the Aggregate.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> In a Certification Aggregate, the Certification Entity is the root, managing linked Value Objects like dates.</p>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Maintain Invariant Rules</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Ensure domain rules are enforced consistently within the Aggregate boundary.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A Course Aggregate ensures all lessons are completed before marking the course as completed.</p>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Avoid Over-Complex Aggregates</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Keep Aggregates small and focused to simplify state management and reduce the likelihood of contention in transactional systems.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> Separate Learner progress tracking into its own Aggregate instead of embedding it into the Course Aggregate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Aggregates in Kalkomey</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, Aggregates help model domain concepts like Courses, Certifications, and Learners. Here’s how they are used:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Aggregate: Certification
+- Root: Certification Entity.
+- Includes: Issue Date, Expiration Date (Value Objects).
+- Enforces: Expiration cannot precede Issue Date, only valid Certifications can be renewed.
+
+Aggregate: Course
+- Root: Course Entity.
+- Includes: Lessons (Entities), Fee (Value Object).
+- Enforces: Lessons must be completed in order, Fee must be paid before enrollment.
+
+Aggregate: Learner
+- Root: Learner Entity.
+- Includes: Profile Information (Value Objects), Enrollments (Entities).
+- Enforces: A learner cannot enroll in a course without prerequisites.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        These Aggregates ensure domain rules are consistently applied while keeping the model manageable.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Domain Events</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        After mastering Aggregates, learn how Domain Events can decouple interactions and model business processes effectively.
+      </p>
+      <a href="domain-events.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Domain Events →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

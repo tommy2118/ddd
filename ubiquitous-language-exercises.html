@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubiquitous Language Exercises - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="creating-language.html" class="text-gray-300 hover:text-white">Creating Language</a>
+        <a href="embedding-language.html" class="text-gray-300 hover:text-white">Embedding Language</a>
+        <a href="evolving-language.html" class="text-gray-300 hover:text-white">Evolving Language</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Ubiquitous Language Exercises</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Test your knowledge and skills in defining, refining, and embedding a shared Ubiquitous Language. These exercises are designed to reflect real-world scenarios at Kalkomey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Exercise 1 -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Exercise 1: Identifying Key Terms</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Imagine you're working on the Certification Management domain. Read the scenario below and identify the key terms that should be part of the Ubiquitous Language.
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre>
+Scenario:
+A user enrolls in a boating safety course provided by a training organization. Upon completion,
+the organization issues a certification that includes the user's name, the course title, and the expiration date.
+If the certification expires, the user must retake the course to renew their certification.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        Write down the key terms and definitions you would include in the Ubiquitous Language.
+      </p>
+      <p class="text-gray-300 text-center mt-6">
+        <strong>Hint:</strong> Focus on nouns like "certification" and "training organization."
+      </p>
+    </div>
+  </section>
+
+  <!-- Exercise 2 -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Exercise 2: Resolving Ambiguities</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Read the conflicting definitions below for the term "user" and propose a resolution.
+        What specific terms could you use to avoid confusion?
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre>
+Conflict:
+1. "User" refers to a person enrolled in a course (student).
+2. "User" refers to an administrator managing certifications.
+3. "User" refers to a training organization issuing certifications.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        Write your resolution. For example, you might use terms like "applicant," "administrator," or "organization."
+      </p>
+    </div>
+  </section>
+
+  <!-- Exercise 3 -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Exercise 3: Embedding Language</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Take the terms "certification" and "expiration date" from the previous exercises and embed them into:
+      </p>
+      <ul class="list-disc list-inside text-gray-300">
+        <li>A Ruby class definition.</li>
+        <li>A RESTful API endpoint.</li>
+        <li>A database schema.</li>
+      </ul>
+      <p class="text-gray-300 text-center mt-6">
+        Example:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre>
+# Ruby Class
+class Certification
+  attr_reader :expiration_date
+
+  def initialize(expiration_date)
+    @expiration_date = expiration_date
+  end
+
+  def expired?
+    Time.now > expiration_date
+  end
+end
+
+# RESTful API
+GET /certifications/{id}
+
+# Database Schema
+CREATE TABLE certifications (
+  id SERIAL PRIMARY KEY,
+  expiration_date DATE NOT NULL
+);
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Ready to Apply These Skills?</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Use these exercises as a foundation for refining the Ubiquitous Language in your projects. Collaborate with your team and practice embedding the language in real systems.
+      </p>
+      <a href="ubiquitous-language.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Return to Ubiquitous Language Overview →
+      </a>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Concept: Bounded Contexts</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Now that you’ve practiced identifying and embedding a shared language, it’s time to explore how to define clear boundaries for your domain models using Bounded Contexts.
+      </p>
+      <a href="bounded-contexts.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Bounded Contexts →
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

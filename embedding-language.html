@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedding the Shared Language - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="creating-language.html" class="text-gray-300 hover:text-white">Creating Language</a>
+        <a href="evolving-language.html" class="text-gray-300 hover:text-white">Evolving Language</a>
+        <a href="collaboration-language.html" class="text-gray-300 hover:text-white">Collaboration</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Embedding the Shared Language</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        A shared Ubiquitous Language is only effective if it’s consistently reflected in the codebase, systems, and workflows.
+        Learn techniques to embed the language at every level of development.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Embedding Matters -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why Embedding the Language is Important</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Embedding the shared language ensures that your systems are aligned with business goals, remain understandable,
+        and support long-term maintainability. At Kalkomey, embedding the language helps:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Consistency</h4>
+          <p class="text-gray-300">
+            All parts of the system—from APIs to database schemas—use the same terms and concepts.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Clarity</h4>
+          <p class="text-gray-300">
+            Developers can easily understand and navigate the codebase, as it mirrors the business domain.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Scalability</h4>
+          <p class="text-gray-300">
+            A well-embedded language reduces friction when onboarding new team members or scaling systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Techniques Section -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-8">Techniques for Embedding the Shared Language</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Technique 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Use Business Terms in Code</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Ensure that the shared language is reflected in class names, methods, and variable names. For example:
+          </p>
+          <pre class="bg-gray-700 p-4 rounded text-green-400 text-sm overflow-auto">
+# Ruby example: Reflecting business terms in the domain model
+class Certification
+  attr_reader :holder, :expiration_date
+
+  def initialize(holder, expiration_date)
+    @holder = holder
+    @expiration_date = expiration_date
+  end
+
+  def expired?
+    Time.now > expiration_date
+  end
+end
+          </pre>
+        </div>
+
+        <!-- Technique 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Create Expressive APIs</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Design APIs that reflect the Ubiquitous Language, making them intuitive for both developers and external consumers. For example:
+          </p>
+          <pre class="bg-gray-700 p-4 rounded text-green-400 text-sm overflow-auto">
+# Example: Certification Management API
+GET /certifications/{id}  # Retrieve a certification
+POST /certifications      # Issue a new certification
+PUT /certifications/{id}  # Update certification details
+DELETE /certifications/{id} # Revoke a certification
+          </pre>
+        </div>
+
+        <!-- Technique 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Align Database Schemas</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Use consistent terminology in database tables and columns to mirror the domain model. For example:
+          </p>
+          <pre class="bg-gray-700 p-4 rounded text-green-400 text-sm overflow-auto">
+-- Example: Certification table schema
+CREATE TABLE certifications (
+  id SERIAL PRIMARY KEY,
+  holder_id INT NOT NULL,
+  issue_date DATE NOT NULL,
+  expiration_date DATE NOT NULL
+);
+          </pre>
+        </div>
+
+        <!-- Technique 4 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Document the Language</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Maintain a central document that tracks the shared language, including its use in code, APIs, and schemas.
+            Ensure all team members have access to this document and update it regularly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Certification Lifecycle</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Here’s how a shared language is embedded across multiple layers in the Certification Management domain:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+        <pre>
+# Domain Model
+class Certification
+  attr_reader :expiration_date
+
+  def initialize(expiration_date)
+    @expiration_date = expiration_date
+  end
+
+  def expired?
+    Time.now > expiration_date
+  end
+end
+
+# API Route
+GET /certifications/{id}
+
+# Database Schema
+CREATE TABLE certifications (
+  id SERIAL PRIMARY KEY,
+  expiration_date DATE NOT NULL
+);
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Steps</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Discover how to keep your shared language relevant and up-to-date as your business evolves.
+      </p>
+      <a href="evolving-language.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Evolving the Language →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

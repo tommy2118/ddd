@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is a Bounded Context? - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">What is a Bounded Context?</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        A Bounded Context is a core concept in Domain-Driven Design (DDD) that defines a clear boundary around a specific domain model.
+        It ensures consistency of language, behavior, and rules within that boundary while isolating it from others.
+      </p>
+    </div>
+  </section>
+
+  <!-- Definition Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Understanding Bounded Contexts</h3>
+      <p class="text-gray-300 leading-relaxed mb-6">
+        A Bounded Context can be thought of as a <strong>logical boundary</strong> within which a particular domain model applies. This boundary includes:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Consistent Terminology:</strong> Every term has a single meaning within the context.</li>
+        <li><strong>Defined Rules:</strong> Business rules and behaviors are specific to the context.</li>
+        <li><strong>Encapsulation:</strong> The domain logic is isolated from other contexts.</li>
+      </ul>
+      <p class="text-gray-300 leading-relaxed">
+        Think of a Bounded Context as a self-contained unit, where a domain model is consistent and meaningful, without conflicting with terms or rules in other parts of the system.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Bounded Contexts Matter Section -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why Bounded Contexts Matter</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Bounded Contexts are essential for managing complexity in large systems. Without them, systems can become messy, with terms
+        and behaviors overlapping in unpredictable ways. Here’s what Bounded Contexts help achieve:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Clarity</h4>
+          <p class="text-gray-300">
+            Each team works within a defined scope, avoiding confusion caused by overloaded terminology.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Isolation</h4>
+          <p class="text-gray-300">
+            Domain models remain isolated, reducing the risk of unexpected dependencies between systems.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Scalability</h4>
+          <p class="text-gray-300">
+            Teams can scale their systems independently by focusing on their specific context.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Certification Management</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, the Certification Management system is one Bounded Context. It is responsible for issuing certifications to learners
+        after course completion and ensuring compliance with state or provincial regulations.
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Bounded Context: Certification Management
+- Responsible for issuing certifications and managing expiration dates.
+- Terms like "certification," "learner," and "expiration date" have specific meanings.
+- Does not handle course creation (handled by the LMS context).
+</pre>
+      </div>
+      <p class="text-gray-300 mt-6 text-center">
+        This isolation ensures that the Certification Management system can focus on its responsibilities without being affected by changes in unrelated contexts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Identifying Bounded Contexts</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Learn how to identify Bounded Contexts in your system by analyzing natural boundaries, terminology, and workflows.
+      </p>
+      <a href="bounded-contexts-identifying.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Identifying Contexts →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

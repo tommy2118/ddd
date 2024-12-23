@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Value Objects - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Value Objects</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Value Objects represent concepts in your domain that do not require unique identity. They are immutable, making them simple yet powerful tools for modeling meaningful data.
+      </p>
+    </div>
+  </section>
+
+  <!-- What are Value Objects? -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What are Value Objects?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        A Value Object models a concept through its attributes but lacks a unique identity. Instead, Value Objects are defined by their attributes and are considered equal if their attributes are identical. Key characteristics include:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Equality by Value:</strong> Two Value Objects are the same if all their attributes are equal.</li>
+        <li><strong>Immutability:</strong> Once created, the state of a Value Object cannot be changed.</li>
+        <li><strong>Reusability:</strong> Value Objects can be reused across Entities or Aggregates.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        Value Objects help simplify your domain model by reducing unnecessary complexity and encapsulating meaningful data.
+      </p>
+    </div>
+  </section>
+
+  <!-- Characteristics of Good Value Object Design -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Characteristics of Good Value Object Design</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Designing Value Objects effectively ensures your domain model is expressive and maintainable. Follow these principles:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Principle 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Model Concepts, Not Identity</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Use Value Objects to represent meaningful concepts like dates, coordinates, or monetary values.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A Course Fee can be represented as a Value Object with amount and currency.</p>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Enforce Immutability</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Make Value Objects immutable to ensure their state cannot change after creation. This simplifies reasoning and prevents bugs.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A Certification Date Value Object ensures integrity by remaining unchanged after issuance.</p>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Add Behavior Where Needed</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Encapsulate logic within Value Objects to make the model expressive. Avoid treating them as mere data holders.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A GPS Coordinate Value Object can calculate distance to another coordinate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Value Objects in Kalkomey</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, Value Objects are used to model meaningful concepts like monetary values, coordinates, and compliance dates. Here are some examples:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Value Object: Course Fee
+- Attributes: Amount, Currency.
+- Behavior: Convert currency, format for display.
+
+Value Object: Certification Date
+- Attributes: Issue Date, Expiration Date.
+- Behavior: Check if expired, calculate remaining validity.
+
+Value Object: GPS Coordinate
+- Attributes: Latitude, Longitude.
+- Behavior: Calculate distance to another coordinate, check proximity.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        These Value Objects encapsulate data and behavior, simplifying interactions while ensuring correctness and reusability.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Aggregates</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        After mastering Value Objects, learn how Aggregates group Entities and Value Objects into meaningful units of consistency.
+      </p>
+      <a href="aggregates.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Aggregates →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

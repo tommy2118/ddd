@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tactical Modeling - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Tactical Modeling</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Tactical Modeling is where the details of Domain-Driven Design come to life. It focuses on building domain models that are rich, expressive, and aligned with the business’s rules and workflows.
+      </p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What is Tactical Modeling?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Tactical Modeling focuses on the design of domain objects and their interactions within a single Bounded Context. Key elements include:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Entities:</strong> Objects with a unique identity that persist over time.</li>
+        <li><strong>Value Objects:</strong> Immutable objects that define a concept with no identity.</li>
+        <li><strong>Aggregates:</strong> Clusters of domain objects managed as a single unit.</li>
+        <li><strong>Domain Events:</strong> Notifications of significant domain occurrences.</li>
+        <li><strong>Repositories:</strong> Interfaces for accessing and persisting domain objects.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        These tools allow developers to model the domain in a way that reflects real-world rules and workflows.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Concepts Section -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Core Concepts</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Dive into each component of Tactical Modeling to understand its role in creating a robust and meaningful domain model:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Entities -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Entities</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Define objects with unique identities and lifecycles.
+          </p>
+          <a href="entities.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+
+        <!-- Value Objects -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Value Objects</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Model concepts with attributes but no identity.
+          </p>
+          <a href="value-objects.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+
+        <!-- Aggregates -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Aggregates</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Cluster domain objects into cohesive units.
+          </p>
+          <a href="aggregates.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+
+        <!-- Domain Events -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Domain Events</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Notify other parts of the system about important domain events.
+          </p>
+          <a href="domain-events.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+
+        <!-- Repositories -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Repositories</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Handle the persistence and retrieval of domain objects.
+          </p>
+          <a href="repositories.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Start Exploring Tactical Modeling</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Begin with Entities to learn how to represent unique objects in your domain.
+      </p>
+      <a href="entities.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Entities →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maintaining Bounded Contexts - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Maintaining Bounded Contexts</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Over time, business needs evolve, and so must your Bounded Contexts. Maintaining well-defined boundaries ensures your system can adapt without introducing unnecessary complexity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Maintenance Matters -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why Maintenance Matters</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Without consistent maintenance, Bounded Contexts can drift from their original purpose, leading to overlapping responsibilities, inconsistent terminology, and unnecessary coupling. Maintenance ensures:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Consistency</h4>
+          <p class="text-gray-300">
+            Keeps terminology and rules aligned within the context.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Adaptability</h4>
+          <p class="text-gray-300">
+            Enables smooth integration of new business requirements.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Sustainability</h4>
+          <p class="text-gray-300">
+            Prevents complexity from growing over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategies for Maintenance -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Strategies for Maintaining Bounded Contexts</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Use these strategies to ensure your contexts remain effective over time:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Strategy 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Regularly Review Boundaries</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Revisit the boundaries of each context periodically to ensure they still align with current business goals and workflows.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> If the LMS expands to handle international certifications, update its boundaries to include new rules and responsibilities.</p>
+        </div>
+
+        <!-- Strategy 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Refactor Contexts Incrementally</h4>
+          <p class="text-gray-300 leading-relaxed">
+            If boundaries need adjustment, refactor in small, manageable steps to avoid disruptions.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> Splitting a single E-Regulations context into separate contexts for Hunting and Fishing Regulations.</p>
+        </div>
+
+        <!-- Strategy 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Monitor Dependencies</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Keep track of how contexts depend on one another. Address cases where dependencies grow too tightly coupled.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> Avoid making LMS overly dependent on HuntWise by using shared APIs instead of direct integration.</p>
+        </div>
+
+        <!-- Strategy 4 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">4. Engage Domain Experts</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Work with domain experts to ensure terminology and workflows remain accurate and relevant as the business evolves.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: HuntWise Expansion</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        When Kalkomey expanded HuntWise to include detailed fishing tools, it required redefining boundaries and responsibilities. Here’s how we maintained clarity:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Original Context: HuntWise
+- Responsibilities: Hunting tools (GPS maps, plans, trophies).
+- Terminology: Hunter, Hunt Area, Season Plan.
+
+Updated Context: HuntWise
+- Responsibilities: Expanded to include fishing tools and seasons.
+- Terminology: Angler, Fishing Spot, Trophy Catch, Fishing Season.
+
+Action Taken:
+- Updated boundaries to separate hunting-specific and fishing-specific workflows.
+- Refactored shared terms (e.g., "Season Plan") into context-specific terms (e.g., "Hunting Plan" and "Fishing Season").
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        This careful maintenance ensured HuntWise remained flexible and scalable while supporting new business objectives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Explore More</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Congratulations on completing the core principles of Bounded Contexts! Explore other topics in Domain-Driven Design to continue your journey.
+      </p>
+      <a href="tactical-modeling.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Tactical Modeling →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

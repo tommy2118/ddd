@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Maps - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Context Maps</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        A Context Map provides a high-level view of how Bounded Contexts relate to one another. By visualizing dependencies and integration patterns, teams can better coordinate and design systems that align with business goals.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is a Context Map? -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What is a Context Map?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        A Context Map is a diagram that shows the relationships between different Bounded Contexts. It includes details like:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Boundaries:</strong> Clearly defined borders for each context.</li>
+        <li><strong>Relationships:</strong> How contexts interact or depend on each other.</li>
+        <li><strong>Integration Patterns:</strong> Methods used to communicate, such as REST APIs or events.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        By creating a Context Map, you can identify areas of complexity, bottlenecks, and opportunities for improved collaboration.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Patterns -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Key Patterns in Context Maps</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        When defining relationships between contexts, several common patterns emerge. These patterns help clarify responsibilities and communication:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <!-- Pattern 1 -->
+        <div>
+          <h4 class="text-xl font-bold mb-2">1. Customer-Supplier</h4>
+          <p class="text-gray-300">
+            One context depends on another for specific outputs. The supplier must meet the needs of the customer.
+          </p>
+        </div>
+
+        <!-- Pattern 2 -->
+        <div>
+          <h4 class="text-xl font-bold mb-2">2. Shared Kernel</h4>
+          <p class="text-gray-300">
+            Two contexts share a common subset of domain logic. Teams must closely collaborate to maintain consistency.
+          </p>
+        </div>
+
+        <!-- Pattern 3 -->
+        <div>
+          <h4 class="text-xl font-bold mb-2">3. Anti-Corruption Layer</h4>
+          <p class="text-gray-300">
+            A layer that translates data and interactions to prevent one context from being negatively affected by another.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Kalkomey Context Map</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, Context Maps help us understand how our systems like LMS, E-Regulations, and HuntWise interact. Here’s a simplified Context Map:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
++-----------------------+     Customer-Supplier     +-------------------------+
+|          LMS          |<------------------------->|     E-Regulations       |
+| - Manages courses     |                           | - Stores regulations    |
+| - Tracks learners     |                           | - Provides compliance   |
++-----------------------+                           +-------- ----------------+
+
++-----------------------+     Shared Kernel         +-------------------------+
+|          LMS          |<------------------------->|       HuntWise          |
+| - Certification data  |                           | - Hunting tools         |
+| - User profiles       |                           | - Trophy tracking       |
++-----------------------+                           +-------------------------+
+
++-----------------------+  Anti-Corruption Layer    +-------------------------+
+|       E-Regulations   |<------------------------->|     External Agency     |
+| - Translates rules    |                           | - Legacy systems        |
++-----------------------+                           +-------------------------+
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        This map illustrates how responsibilities are distributed and highlights the integration patterns used for communication.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Core Domains</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Learn how to identify and prioritize your system’s Core Domain to focus your resources where they provide the most value.
+      </p>
+      <a href="core-domains.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Core Domains →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

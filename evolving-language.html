@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolving the Shared Language - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="creating-language.html" class="text-gray-300 hover:text-white">Creating Language</a>
+        <a href="embedding-language.html" class="text-gray-300 hover:text-white">Embedding Language</a>
+        <a href="collaboration-language.html" class="text-gray-300 hover:text-white">Collaboration</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Evolving the Shared Language</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        A Ubiquitous Language must grow and adapt alongside your business and domain understanding. Learn strategies to evolve the language without disrupting systems or workflows.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Evolution is Necessary -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why Evolving the Language is Crucial</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, our business domains, such as Certification Management and Compliance, are constantly evolving. Without a strategy for maintaining the shared language:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Inconsistencies Emerge</h4>
+          <p class="text-gray-300">
+            New terms or concepts may conflict with existing ones, leading to confusion across teams.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Systems Become Outdated</h4>
+          <p class="text-gray-300">
+            Legacy terms in the codebase may no longer reflect the actual business domain.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Collaboration Suffers</h4>
+          <p class="text-gray-300">
+            Teams may revert to siloed communication as the shared language loses relevance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategies Section -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-8">Strategies for Evolving the Shared Language</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Strategy 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Regular Language Audits</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Schedule periodic reviews of the shared language with stakeholders to identify outdated terms and ensure new ones are well-defined.
+          </p>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Are all terms still in use?</li>
+            <li>Do any terms have conflicting definitions?</li>
+            <li>Have new workflows introduced undefined concepts?</li>
+          </ul>
+        </div>
+
+        <!-- Strategy 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Versioned Documentation</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Use version control (e.g., Git) for your shared language documentation. This allows teams to track changes and understand historical context.
+          </p>
+          <pre class="bg-gray-700 p-4 rounded text-green-400 text-sm overflow-auto">
+# Example: Git commit for language update
+git commit -m "Updated 'Certification' definition to include new expiration rules"
+          </pre>
+        </div>
+
+        <!-- Strategy 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Deprecate Carefully</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            When removing outdated terms, provide clear migration paths for teams and systems. For example:
+          </p>
+          <pre class="bg-gray-700 p-4 rounded text-green-400 text-sm overflow-auto">
+# Before
+CertificationStatus: active, expired
+
+# After
+CertificationState: valid, invalid
+# Deprecated 'CertificationStatus' remains temporarily for backwards compatibility.
+          </pre>
+        </div>
+
+        <!-- Strategy 4 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Collaborate on Changes</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Involve domain experts and engineers when making significant changes to the language.
+            Use workshops or collaborative tools to build consensus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Updating Certification Terminology</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Here’s an example of evolving the language for the Certification Management domain:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+        <pre>
+# Old terminology
+CertificationStatus:
+- active
+- expired
+
+# New terminology
+CertificationState:
+- valid
+- invalid
+
+# Migration Steps
+1. Update all references in the codebase.
+2. Notify teams of the change and provide training materials.
+3. Deprecate old terms with clear warnings in APIs and schemas.
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Steps</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Learn how to collaborate effectively with domain experts and teams to refine and grow your Ubiquitous Language.
+      </p>
+      <a href="collaboration-language.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Collaboration →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

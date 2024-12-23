@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entities - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Entities</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Entities are objects with a unique identity that persists over time, even as their attributes change. In Domain-Driven Design, they represent the core concepts of your business.
+      </p>
+    </div>
+  </section>
+
+  <!-- What are Entities? -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What are Entities?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        An Entity is an object defined by its identity, not by its attributes. It models concepts that are unique and trackable over time, such as a learner, course, or certification in Kalkomey’s systems.
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Unique Identity:</strong> Each Entity is distinguishable by a unique identifier, such as a database ID or a natural key.</li>
+        <li><strong>Stateful:</strong> An Entity’s attributes can change over time, but its identity remains constant.</li>
+        <li><strong>Lifecycle:</strong> Entities have a lifecycle, from creation to eventual deletion or archival.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        In a Bounded Context, Entities encapsulate domain logic that directly relates to their identity and behavior.
+      </p>
+    </div>
+  </section>
+
+  <!-- Characteristics of Good Entity Design -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Characteristics of Good Entity Design</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Designing Entities effectively requires focusing on their identity, lifecycle, and encapsulated behavior. Here are some principles:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Principle 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Unique Identity</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Always assign a unique identifier to distinguish an Entity from others, even if they share attributes.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> Each Learner in the LMS is identified by a unique ID, even if two learners share the same name.</p>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Behavior Encapsulation</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Model an Entity’s behaviors and rules directly within the object, avoiding the “anemic domain model” anti-pattern.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A Certification Entity can validate its expiration date or verify completion status.</p>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Manage Lifecycles</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Ensure the Entity accurately reflects its lifecycle, from creation to updates and eventual deletion.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A Course Entity starts with creation, transitions through updates, and ends with archiving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Entities in Kalkomey</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, Entities like Learners, Courses, and Certifications represent core domain concepts. Here’s how they’re modeled:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Entity: Learner
+- Attributes: ID, Name, Email, Enrollment Date.
+- Behavior: Enroll in a course, track progress, complete certification.
+
+Entity: Course
+- Attributes: ID, Title, Description, Start Date.
+- Behavior: Add lessons, enroll learners, track completion rates.
+
+Entity: Certification
+- Attributes: ID, Learner ID, Course ID, Issue Date, Expiration Date.
+- Behavior: Validate expiration, renew certification.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        These Entities encapsulate both state and behavior, aligning with business rules while maintaining a unique identity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Value Objects</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        After understanding Entities, learn how to design Value Objects to represent domain concepts without unique identity.
+      </p>
+      <a href="value-objects.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Value Objects →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

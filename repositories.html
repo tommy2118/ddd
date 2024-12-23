@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositories - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Repositories</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Repositories abstract data access, acting as a bridge between the domain and persistence layers. They provide a clean interface for managing and retrieving domain objects.
+      </p>
+    </div>
+  </section>
+
+  <!-- What are Repositories? -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What are Repositories?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        A Repository mediates between the domain and data layers, offering an interface for accessing domain objects. It provides the following benefits:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Encapsulation:</strong> Hides database queries and persistence logic from the domain layer.</li>
+        <li><strong>Consistency:</strong> Ensures all operations follow domain rules and invariants.</li>
+        <li><strong>Testability:</strong> Simplifies unit testing by enabling in-memory or mock repositories.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        Repositories make the domain model expressive and free from persistence concerns, aligning with DDD principles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Characteristics of Good Repository Design -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Characteristics of Good Repository Design</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Designing effective Repositories requires following best practices to ensure clarity, simplicity, and alignment with the domain model. Here are key principles:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Principle 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Follow the Aggregate Boundary</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Each Repository corresponds to an Aggregate Root, ensuring that all operations respect the Aggregate’s consistency rules.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A `CourseRepository` manages the `Course` Aggregate, including its associated lessons.</p>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Expose Intention-Revealing Methods</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Use descriptive method names that reflect the business purpose, not the technical implementation.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A `findCoursesByLearner` method indicates its purpose, avoiding low-level database terminology.</p>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Keep Queries Focused</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Ensure queries return only the required data, avoiding unnecessary complexity or over-fetching.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> A `getActiveCertifications` query retrieves only active records, optimizing performance and clarity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Repositories in Kalkomey</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, Repositories manage domain objects like Courses, Certifications, and Learners. Here are some examples:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Repository: CourseRepository
+- Aggregate: Course.
+- Methods:
+  - save(Course): Persists a Course Aggregate and its associated lessons.
+  - findById(CourseId): Retrieves a Course by its unique identifier.
+  - findCoursesByLearner(LearnerId): Retrieves all courses enrolled by a learner.
+
+Repository: CertificationRepository
+- Aggregate: Certification.
+- Methods:
+  - save(Certification): Persists a Certification Aggregate.
+  - getActiveCertifications(LearnerId): Retrieves active certifications for a learner.
+  - findByCourseAndLearner(CourseId, LearnerId): Retrieves a specific Certification.
+
+Repository: LearnerRepository
+- Aggregate: Learner.
+- Methods:
+  - save(Learner): Persists a Learner Aggregate.
+  - findByEmail(Email): Retrieves a Learner by their email address.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        These Repositories ensure the domain model is consistently managed while abstracting persistence concerns.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Steps</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Congratulations on completing the Tactical Modeling series! Apply what you've learned by building Repositories in your own projects, or revisit previous topics for deeper understanding.
+      </p>
+      <a href="exercises.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Explore Exercises →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

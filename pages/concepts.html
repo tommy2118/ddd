@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DDD Concepts - Learn Domain-Driven Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">D³ Platform</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="concepts.html" class="text-gray-300 hover:text-white">Concepts</a>
+        <a href="tools.html" class="text-gray-300 hover:text-white">Tools</a>
+        <a href="examples.html" class="text-gray-300 hover:text-white">Examples</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-12 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Core Concepts of Domain-Driven Design</h2>
+      <p class="text-lg text-gray-300">
+        Understand the foundational principles that drive effective software modeling, enabling teams to tackle complexity head-on.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto my-12 p-4">
+    <!-- Introduction -->
+    <section class="mb-12">
+      <h3 class="text-2xl font-bold mb-4">What is Domain-Driven Design?</h3>
+      <p class="text-gray-300 leading-relaxed">
+        Domain-Driven Design (DDD) is an approach to software development that prioritizes the domain (business logic) as the center of all design and development efforts.
+        It’s about building a shared understanding of the problem space and aligning technical solutions with real-world needs.
+        By focusing on the domain, DDD enables better collaboration between developers and domain experts, leading to systems that are more maintainable, flexible, and aligned with business goals.
+      </p>
+    </section>
+
+    <!-- Core Concepts -->
+    <section class="mb-12">
+      <h3 class="text-2xl font-bold mb-4">Core Concepts of DDD</h3>
+
+      <!-- Bounded Context -->
+      <div class="mb-8">
+        <h4 class="text-xl font-semibold mb-2">1. Bounded Context</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          A <strong>Bounded Context</strong> defines the boundaries within which a specific domain model is valid.
+          It ensures clarity by limiting the scope of a model to its context. In complex systems, different parts of the business may use similar terms with slightly different meanings.
+          Bounded Contexts help avoid confusion by isolating models and their meanings.
+        </p>
+        <pre class="bg-gray-800 p-4 rounded text-green-400 text-sm overflow-auto">
++-------------------+       +-------------------+
+|  User Management  |       |   Order Service   |
++-------------------+       +-------------------+
+| - User Entity     |<----->| - Order Entity    |
+| - Authentication  |       | - Payment         |
++-------------------+       +-------------------+
+        </pre>
+        <p class="text-gray-300 mt-2">
+          In this example, "User Management" and "Order Service" are distinct contexts, even though they share related entities. By separating concerns, changes in one context do not inadvertently affect the other.
+        </p>
+      </div>
+
+      <!-- Ubiquitous Language -->
+      <div class="mb-8">
+        <h4 class="text-xl font-semibold mb-2">2. Ubiquitous Language</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          A <strong>Ubiquitous Language</strong> is a shared vocabulary used by both developers and domain experts to ensure clear communication.
+          This language is embedded into the code, tests, and discussions, acting as a bridge between technical and business teams.
+        </p>
+        <blockquote class="bg-gray-800 p-4 rounded text-gray-300 italic">
+          "The model is the backbone of the ubiquitous language." - Eric Evans
+        </blockquote>
+        <p class="text-gray-300 mt-2">
+          For instance, in a banking application, terms like "Account Holder," "Transaction," and "Ledger" would be part of the ubiquitous language.
+        </p>
+      </div>
+
+      <!-- Aggregates -->
+      <div class="mb-8">
+        <h4 class="text-xl font-semibold mb-2">3. Aggregates</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          An <strong>Aggregate</strong> is a cluster of domain objects that are treated as a single unit for data changes.
+          One entity, called the Aggregate Root, is the entry point for interacting with the aggregate. Aggregates enforce invariants to ensure consistent state.
+        </p>
+        <pre class="bg-gray-800 p-4 rounded text-green-400 text-sm overflow-auto">
++-----------------+
+| Order (Root)    |
++-----------------+
+| - Line Items    |
+| - Total Amount  |
++-----------------+
+        </pre>
+        <p class="text-gray-300 mt-2">
+          In this example, the "Order" aggregate includes "Line Items" and "Total Amount." The aggregate root ensures business rules like "Total Amount must equal the sum of Line Items."
+        </p>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="mb-12">
+      <h3 class="text-2xl font-bold mb-4">Why DDD Matters</h3>
+      <p class="text-gray-300 leading-relaxed">
+        DDD is not just about building software; it’s about aligning teams, uncovering the essence of a problem, and delivering value.
+        By focusing on the domain, teams can reduce technical debt, improve collaboration, and create systems that are robust and adaptable to change.
+      </p>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <a href="tools.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Explore DDD Tools & Resources →
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-4 text-center">
+    <p class="text-gray-500">
+      © 2024 D³ Platform | Inspired by GitHub, Vim, and Tmux | Built with ❤️ and ASCII art
+    </p>
+  </footer>
+</body>
+</html>

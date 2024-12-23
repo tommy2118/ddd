@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identifying Bounded Contexts - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Identifying Bounded Contexts</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Identifying Bounded Contexts is the first step toward designing clear, maintainable systems. By recognizing natural boundaries in terminology, workflows, and responsibilities, you can build systems that are easy to understand and evolve.
+      </p>
+    </div>
+  </section>
+
+  <!-- Techniques for Identification -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Techniques for Identifying Bounded Contexts</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        To identify Bounded Contexts, start by analyzing your business domains. Look for areas with distinct responsibilities, terminology, or workflows. These techniques can help:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Technique 1 -->
+        <div class="bg-gray-900 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Analyze Terminology</h4>
+          <p class="text-gray-300 leading-relaxed">
+            List terms used in your system and identify where their meanings diverge. For example, at Kalkomey:
+          </p>
+          <ul class="list-disc list-inside text-gray-300 mt-4">
+            <li><strong>User:</strong> Could mean a hunter (HuntWise) or a learner (LMS).</li>
+            <li><strong>Regulation:</strong> Relevant to both E-Regulations and Agency Relations but used differently.</li>
+          </ul>
+        </div>
+
+        <!-- Technique 2 -->
+        <div class="bg-gray-900 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Examine Workflows</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Map out key workflows in your system. Areas with independent workflows often indicate separate contexts. For instance:
+          </p>
+          <ul class="list-disc list-inside text-gray-300 mt-4">
+            <li>Certification Issuance in LMS involves learners and courses.</li>
+            <li>Season Updates in E-Regulations deals with hunting laws and agencies.</li>
+          </ul>
+        </div>
+
+        <!-- Technique 3 -->
+        <div class="bg-gray-900 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Define Responsibilities</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Identify areas with clear, distinct responsibilities. Avoid overlapping responsibilities, as they create unnecessary complexity.
+          </p>
+          <p class="text-gray-300 leading-relaxed mt-4">
+            Example: The LMS is responsible for learner enrollments and certifications, while HuntWise focuses on hunting plans and tools.
+          </p>
+        </div>
+
+        <!-- Technique 4 -->
+        <div class="bg-gray-900 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">4. Use Domain Experts</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Collaborate with domain experts to understand boundaries that naturally exist in the business. Their insights can reveal where terminology and rules change.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: LMS and HuntWise</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, the LMS and HuntWise represent two distinct Bounded Contexts. Here's how their boundaries are defined:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Bounded Context: Learning Management System (LMS)
+- Focus: Manage courses, learner progress, and certifications.
+- Key Terms: Learner, Course, Certification, Compliance Report.
+- Independent Workflow: Certification issuance process.
+
+Bounded Context: HuntWise
+- Focus: Provide tools for hunters (e.g., GPS maps, planning).
+- Key Terms: Hunter, Hunt Area, Trophy, Season Plan.
+- Independent Workflow: Hunting season planning and tracking.
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Defining Boundaries</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Once you've identified Bounded Contexts, the next step is to define their boundaries with clarity and precision. Learn how to use diagrams, models, and tools to articulate boundaries.
+      </p>
+      <a href="bounded-contexts-defining.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Defining Boundaries →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating a Shared Language - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="embedding-language.html" class="text-gray-300 hover:text-white">Embedding Language</a>
+        <a href="evolving-language.html" class="text-gray-300 hover:text-white">Evolving Language</a>
+        <a href="collaboration-language.html" class="text-gray-300 hover:text-white">Collaboration</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Creating a Shared Language</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Learn how to define a shared vocabulary that reflects Kalkomey’s business processes. By aligning on terminology,
+        we ensure consistency, clarity, and effective communication across teams.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why a Shared Language Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why a Shared Language is Crucial</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, we operate in complex domains such as Certification Management and Compliance Systems.
+        Miscommunication between teams can lead to incorrect assumptions, costly errors, and inefficient workflows.
+        A shared language ensures that:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Everyone is on the Same Page</h4>
+          <p class="text-gray-300">
+            Developers and domain experts understand terms and concepts in the same way.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Systems Reflect Business Needs</h4>
+          <p class="text-gray-300">
+            The shared vocabulary becomes embedded in the code, making it easier to maintain and extend.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Collaboration is Seamless</h4>
+          <p class="text-gray-300">
+            Clear communication fosters trust and improves efficiency during cross-team interactions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps to Create a Shared Language -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-8">Steps to Create a Shared Language</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Gather Key Stakeholders</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Bring together domain experts, product managers, and engineers. Use collaborative workshops to identify
+            terms that are critical to Kalkomey’s workflows, such as "certification" or "applicant."
+          </p>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Who issues certifications?</li>
+            <li>What does "expired certification" mean?</li>
+            <li>Are there different types of certifications?</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Define and Document Terms</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Write down clear definitions for each term. For example:
+          </p>
+          <pre class="bg-gray-700 p-4 rounded text-green-400 text-sm overflow-auto">
+Certification:
+- A document issued to a user upon completing a course, valid for a specific period.
+- Includes metadata such as issue date, expiration date, and associated training provider.
+          </pre>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Resolve Ambiguities</h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Clarify terms that could have multiple meanings. For example, does "user" mean a customer or an admin?
+            Use specific terms like "applicant" or "administrator" when appropriate.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Create a Living Document</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Store your definitions in a central, accessible location (e.g., Confluence, Notion). Regularly update
+            the document as business processes evolve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Certification Management</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Here’s an example of creating a shared language for a Certification Management workflow:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+Certification:
+- The formal acknowledgment issued upon course completion.
+
+Expired Certification:
+- A certification that is no longer valid, based on its expiration date.
+
+Applicant:
+- A user who has registered for a course but has not yet completed it.
+
+Administrator:
+- A user with permissions to manage course and certification data.
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Steps</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Learn how to embed your shared language into code and systems, ensuring it’s reflected consistently across all workflows.
+      </p>
+      <a href="embedding-language.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Embed the Shared Language →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

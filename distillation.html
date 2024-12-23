@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distillation - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Distillation</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Distillation is the process of separating the Core Domain from less critical domains, ensuring your team focuses efforts on areas that drive innovation and competitive advantage.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Distillation? -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">What is Distillation?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        In Domain-Driven Design, distillation involves clarifying and separating different areas of your system based on their importance and role. The goal is to focus resources and innovation on the Core Domain while handling Supporting and Generic Domains efficiently. Key aspects include:
+      </p>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed mb-6">
+        <li><strong>Prioritizing the Core Domain:</strong> Distinguishing areas that provide the most value to your business.</li>
+        <li><strong>Identifying Supporting Domains:</strong> Recognizing complementary areas that are necessary but not differentiating.</li>
+        <li><strong>Using Generic Solutions:</strong> Leveraging standard tools for common functionality.</li>
+      </ul>
+      <p class="text-gray-300 text-center leading-relaxed">
+        Distillation provides clarity on where to innovate and where to optimize.
+      </p>
+    </div>
+  </section>
+
+  <!-- Steps for Distillation -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Steps for Effective Distillation</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Follow these steps to distill your system into Core, Supporting, and Generic Domains:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Classify Domains</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Analyze each domain in your system to determine whether it is Core, Supporting, or Generic. Focus on business value and uniqueness.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> At Kalkomey, the LMS is Core, while Marketing Tools are Generic.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Focus Innovation on the Core</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Invest resources in the Core Domain to drive differentiation and competitive advantage. Avoid over-investing in Supporting or Generic Domains.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> Enhance LMS features like compliance tracking to meet regulatory demands.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Simplify Supporting and Generic Domains</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Use off-the-shelf solutions or outsource less critical domains. Avoid over-engineering these areas to reduce costs and complexity.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> Use a SaaS platform for email marketing rather than building custom tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: Distillation at Kalkomey</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, distillation ensures that we prioritize the LMS as our Core Domain while efficiently managing Supporting and Generic Domains. Here’s how we approach it:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Core Domain: Learning Management System (LMS)
+- Responsibilities: Manage courses, learner progress, and certifications.
+- Focus: Innovation and differentiation to meet regulatory needs.
+
+Supporting Domain: E-Regulations
+- Responsibilities: Maintain updated regulations for compliance.
+- Focus: Efficient updates and integration with the LMS.
+
+Generic Domain: Marketing Tools
+- Responsibilities: Campaigns and analytics.
+- Focus: Leverage SaaS solutions to minimize effort and cost.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        This approach ensures Kalkomey remains focused on its Core Domain while simplifying operations in other areas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Steps</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Congratulations on mastering Strategic Design! Continue exploring Domain-Driven Design principles and apply what you've learned to your own systems.
+      </p>
+      <a href="exercises.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Explore Exercises →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+

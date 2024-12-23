@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defining Bounded Contexts - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="ubiquitous-language.html" class="text-gray-300 hover:text-white">Ubiquitous Language</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Defining Bounded Contexts</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Clearly defining the boundaries of a Bounded Context is critical for effective Domain-Driven Design (DDD). By using diagrams, explicit responsibilities, and models, you can ensure that each context is well-defined and understood.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Definition Matters -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why Clear Boundaries Matter</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Without clear boundaries, overlapping responsibilities and inconsistent terminology can lead to system complexity and confusion. Well-defined boundaries:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Reduce Coupling</h4>
+          <p class="text-gray-300">
+            Decouple systems by ensuring responsibilities are isolated and independent.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Enhance Team Alignment</h4>
+          <p class="text-gray-300">
+            Align teams by defining clear scopes for each context.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Support Scalability</h4>
+          <p class="text-gray-300">
+            Make it easier to grow systems as the business evolves without introducing chaos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps to Define a Bounded Context -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Steps to Define a Bounded Context</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Follow these steps to clearly define a Bounded Context:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">1. Assign Responsibilities</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Define the specific domain logic and business processes that this context handles. Be explicit about what it <strong>does</strong> and <strong>does not</strong> handle.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> The LMS context manages enrollments and certifications but does not manage hunting plans (HuntWise).</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">2. Define Terminology</h4>
+          <p class="text-gray-300 leading-relaxed">
+            List the terms specific to this context and define their meanings. Avoid reusing terms with different meanings in other contexts.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> In the LMS, a "user" is a learner, but in HuntWise, a "user" is a hunter.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">3. Map Interactions</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Document how this context interacts with others. Use diagrams to show dependencies and communication patterns.
+          </p>
+          <p class="text-gray-300 mt-4"><strong>Example:</strong> The LMS context relies on E-Regulations for compliance data.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">4. Use Context Maps</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Create context maps to visualize boundaries and relationships. These diagrams help communicate your design to stakeholders.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkomey Example Section -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Example: LMS and E-Regulations</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        At Kalkomey, the LMS and E-Regulations have distinct responsibilities but interact to ensure compliance with hunting and fishing laws. Here’s how their boundaries are defined:
+      </p>
+      <div class="bg-gray-700 p-6 rounded text-green-400 text-sm overflow-auto">
+<pre class="bg-gray-900 p-4 rounded text-green-400">
+Bounded Context: Learning Management System (LMS)
+- Responsibilities: Manage learner enrollments and certifications.
+- Terminology: Learner, Certification, Enrollment.
+- Interaction: Fetch compliance rules from E-Regulations.
+
+Bounded Context: E-Regulations
+- Responsibilities: Maintain and update state/provincial regulations.
+- Terminology: Regulation, Rule Change, Season.
+- Interaction: Provides regulation data to LMS and HuntWise.
+</pre>
+      </div>
+      <p class="text-gray-300 text-center mt-6">
+        This clear separation ensures each context focuses on its responsibilities without overlapping or creating unnecessary dependencies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next: Interactions Between Contexts</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Once boundaries are defined, the next step is to understand how contexts communicate and interact. Learn about communication patterns, dependencies, and integration strategies.
+      </p>
+      <a href="bounded-contexts-interactions.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Learn About Interactions Between Contexts →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+
