@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercises - Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Interactive Exercises</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Test your knowledge of Domain-Driven Design concepts with hands-on exercises. Each section provides tasks to practice Strategic Design, Tactical Modeling, and Bounded Contexts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Strategic Design Exercises -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Strategic Design Exercises</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Apply the principles of Strategic Design to real-world scenarios.
+      </p>
+      <div class="bg-gray-700 p-6 rounded shadow">
+        <h4 class="text-xl font-bold mb-2">Exercise 1: Identify Core and Supporting Domains</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Review Kalkomey’s systems: LMS, HuntWise, and E-Regulations. Identify which system represents the Core Domain and which are Supporting Domains. Explain your reasoning.
+        </p>
+        <h4 class="text-xl font-bold mb-2">Exercise 2: Create a Context Map</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Draw a Context Map for Kalkomey’s systems, showing the relationships between LMS, HuntWise, and E-Regulations. Include integration patterns like Customer-Supplier or Shared Kernel.
+        </p>
+        <a href="strategic-design.html" class="text-blue-400 hover:underline">Review Strategic Design Concepts →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tactical Modeling Exercises -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Tactical Modeling Exercises</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Practice designing Entities, Value Objects, Aggregates, Domain Events, and Repositories.
+      </p>
+      <div class="bg-gray-800 p-6 rounded shadow">
+        <h4 class="text-xl font-bold mb-2">Exercise 1: Design an Entity</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Create an Entity for a Learner in the LMS. Include attributes like ID, Name, and Email, and behaviors like enrolling in a course.
+        </p>
+        <h4 class="text-xl font-bold mb-2">Exercise 2: Model a Value Object</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Design a Value Object for Certification Dates, including Issue Date and Expiration Date. Add behavior to check if a certification is expired.
+        </p>
+        <h4 class="text-xl font-bold mb-2">Exercise 3: Create an Aggregate</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Develop a Certification Aggregate. Include the Certification Entity as the root and related Value Objects. Ensure domain rules like “Expiration cannot precede Issue Date.”
+        </p>
+        <a href="tactical-modeling.html" class="text-blue-400 hover:underline">Review Tactical Modeling Concepts →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bounded Context Exercises -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Bounded Context Exercises</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Master the art of identifying, defining, and maintaining Bounded Contexts.
+      </p>
+      <div class="bg-gray-700 p-6 rounded shadow">
+        <h4 class="text-xl font-bold mb-2">Exercise 1: Identify Bounded Contexts</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Examine the LMS and its integration with E-Regulations. Identify distinct Bounded Contexts and their responsibilities.
+        </p>
+        <h4 class="text-xl font-bold mb-2">Exercise 2: Define Context Boundaries</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Define the boundaries for a Hunting Regulations Context. What should it include, and how should it interact with other contexts like the LMS?
+        </p>
+        <h4 class="text-xl font-bold mb-2">Exercise 3: Manage Context Interactions</h4>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Propose an interaction pattern (e.g., Anti-Corruption Layer or Customer-Supplier) for the LMS and HuntWise integration. Explain why you chose it.
+        </p>
+        <a href="bounded-contexts.html" class="text-blue-400 hover:underline">Review Bounded Contexts Concepts →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Next Steps</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Revisit any topic for a deeper understanding or try building your own Domain-Driven Design project. The journey to mastering DDD starts here.
+      </p>
+      <a href="index.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Return to Home →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
+</html>
+
