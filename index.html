@@ -1,76 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkomey DDD Academy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-900 text-gray-100 font-sans">
-    <!-- Header -->
-    <header class="bg-gray-800 p-4 shadow-md">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
-        <nav class="space-x-4">
-          <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
-          <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
-          <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
-          <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkomey DDD Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Kalkomey DDD Academy</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="strategic-design.html" class="text-gray-300 hover:text-white">Strategic Design</a>
+        <a href="tactical-modeling.html" class="text-gray-300 hover:text-white">Tactical Modeling</a>
+        <a href="bounded-contexts.html" class="text-gray-300 hover:text-white">Bounded Contexts</a>
+        <a href="exercises.html" class="text-gray-300 hover:text-white">Exercises</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gray-700 py-16 text-center">
-      <div class="container mx-auto">
-        <h2 class="text-4xl font-bold mb-6">Welcome to the Kalkomey DDD Academy</h2>
-        <p class="text-lg text-gray-300 mb-6">
-          A comprehensive learning platform designed to help Kalkomey engineers master Domain-Driven Design (DDD).
-          Bridge the gap between technology and business with practical knowledge, hands-on exercises, and company-specific applications.
-        </p>
-        <a href="what-is-ddd.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
-          Start Learning DDD →
-        </a>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Welcome to the Kalkomey DDD Academy</h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Empowering engineers to build better software using Domain-Driven Design (DDD). Dive into Strategic Design, Tactical Modeling, and learn how DDD can transform Kalkomey’s systems.
+      </p>
+      <a href="strategic-design.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Start Learning →
+      </a>
+    </div>
+  </section>
 
-    <!-- Mission Section -->
-    <section class="bg-gray-800 py-12">
-      <div class="container mx-auto">
-        <h3 class="text-3xl font-bold text-center mb-6">Our Mission</h3>
-        <p class="text-gray-300 text-center leading-relaxed mb-8">
-          At Kalkomey LLC, we believe that Domain-Driven Design is a powerful methodology to align our technical systems with business goals,
-          tackle complexity, and improve collaboration across teams. The DDD Academy aims to:
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div>
-            <h4 class="text-xl font-bold mb-2">1. Improve Alignment</h4>
-            <p class="text-gray-300">
-              Design software systems that reflect Kalkomey’s business domains and processes, ensuring our work delivers maximum value.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-xl font-bold mb-2">2. Tackle Complexity</h4>
-            <p class="text-gray-300">
-              Use DDD principles to manage complexity by breaking systems into manageable, meaningful parts.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-xl font-bold mb-2">3. Empower Collaboration</h4>
-            <p class="text-gray-300">
-              Foster better communication between engineers, product managers, and domain experts through a shared understanding of the domain.
-            </p>
-          </div>
+  <!-- Main Content -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Explore the Key Concepts</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Navigate through foundational concepts and practical guidance to understand and implement Domain-Driven Design.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Strategic Design -->
+        <div class="bg-gray-700 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Strategic Design</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Align software architecture with business objectives by defining Bounded Contexts, Core Domains, and more.
+          </p>
+          <a href="strategic-design.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+
+        <!-- Tactical Modeling -->
+        <div class="bg-gray-700 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Tactical Modeling</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Dive into the building blocks of DDD: Entities, Value Objects, Aggregates, Domain Events, and Repositories.
+          </p>
+          <a href="tactical-modeling.html" class="text-blue-400 hover:underline">Learn More →</a>
+        </div>
+
+        <!-- Bounded Contexts -->
+        <div class="bg-gray-700 p-6 rounded shadow">
+          <h4 class="text-xl font-bold mb-2">Bounded Contexts</h4>
+          <p class="text-gray-300 leading-relaxed">
+            Define clear boundaries to separate domain models and ensure alignment across teams.
+          </p>
+          <a href="bounded-contexts.html" class="text-blue-400 hover:underline">Learn More →</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-6 text-center">
-      <p class="text-gray-500">
-        © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+  <!-- Why DDD Section -->
+  <section class="bg-gray-900 py-12">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Why Domain-Driven Design?</h3>
+      <p class="text-gray-300 text-center leading-relaxed mb-8">
+        Domain-Driven Design is more than a software methodology—it's a way to align technology with the heart of your business. At Kalkomey, DDD helps us:
       </p>
-    </footer>
-  </body>
+      <ul class="list-disc list-inside text-gray-300 leading-relaxed">
+        <li>Deliver software that meets complex regulatory needs with precision.</li>
+        <li>Enable better collaboration between technical and business teams.</li>
+        <li>Scale systems effectively while maintaining clarity and consistency.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-700 py-16 text-center">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Start Your DDD Journey</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Whether you're a developer, architect, or product owner, Domain-Driven Design offers tools to tackle complexity and build systems that deliver real business value.
+      </p>
+      <a href="exercises.html" class="px-6 py-3 bg-blue-500 rounded shadow hover:bg-blue-600">
+        Explore Exercises →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-gray-500">
+      © 2024 Kalkomey LLC | Designed to empower engineers with Domain-Driven Design | Powered by teamwork and innovation.
+    </p>
+  </footer>
+</body>
 </html>
 
